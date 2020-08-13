@@ -52,3 +52,9 @@ jQuery(function(){
     $('li').removeClass();
     $(this).parent().addClass('mm-active');
 });
+
+window.addEventListener('DOMContentLoaded', (event) => {
+	let audio = new Audio('3.Rebuttals\COD.wav');
+	audio.preload;
+    console.log('DOM fully loaded and parsed');
+});
