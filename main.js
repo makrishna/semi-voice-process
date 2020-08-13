@@ -77,25 +77,38 @@ window.addEventListener('DOMContentLoaded', (event) => {
 	console.log(intro);
 	let buttons = intro.getElementsByClassName('button');
 	for(let i=0;i<buttons.length;i++){
-		var context = new AudioContext(); // Create and Initialize the Audio Context
-		var electro; // Create the Sound 
-		var getSound = new XMLHttpRequest(); // Load the Sound with XMLHttpRequest
-		getSound.open("GET", "./"+buttons[i].dataset.src, true); // Path to Audio File
-		getSound.responseType = "arraybuffer"; // Read as Binary Data
-		getSound.onload = function () {
-			context.decodeAudioData(getSound.response, function (buffer) {
-				electro = buffer; // Decode the Audio Data and Store it in a Variable
-			});
-		}
-		getSound.send();
-		buttons[i].addEventListener("click",function (event){
-			var playSound = context.createBufferSource(); // Declare a New Sound
-			playSound.buffer = electro; // Attatch our Audio Data as it's Buffer
-			playSound.connect(context.destination);  // Link the Sound to the Output
-			playSound.start(0); // Play the Sound Immediately
-		});
+		setAudioToButton(buttons[i]);
 	}
 });
+
+let namesAndSounds = [];
+
+function setAudioToButton(element) {
+	let context = new AudioContext(); // Create and Initialize the Audio Context
+	let electro; // Create the Sound 
+	let getSound = new XMLHttpRequest(); // Load the Sound with XMLHttpRequest
+	getSound.open("GET", "./" + element.dataset.src, true); // Path to Audio File
+	getSound.responseType = "arraybuffer"; // Read as Binary Data
+	getSound.onload = function () {
+		context.decodeAudioData(getSound.response, function (buffer) {
+			//electro = buffer; // Decode the Audio Data and Store it in a Variable
+			namesAndSounds.push({ name: element.dataset.src, buffer: buffer });
+		});
+	}
+	getSound.send();
+	element.addEventListener("click", function (event) {
+		let songName = event.target.getAttribute("data-src");
+		namesAndSounds.forEach(ele => {
+			if (ele.name === songName) {
+				electro = ele.buffer;
+				let playSound = context.createBufferSource(); // Declare a New Sound
+				playSound.buffer = electro; // Attatch our Audio Data as it's Buffer
+				playSound.connect(context.destination);  // Link the Sound to the Output
+				playSound.start(0); // Play the Sound Immediately
+			}
+		});
+	});
+}
 
 (function(){
 	
