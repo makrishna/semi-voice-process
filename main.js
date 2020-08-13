@@ -5,28 +5,46 @@ jukeBox.addEventListener("click",function (event){
 	var audioFile = new Audio(songName);
 	audioFile.preload;
 	if(audioPlayer){
-		if(songName === audioPlayer.getAttribute("src")){
-			if(audioPlayer.paused){
-				audioFile.play();
-				event.target.id="playing"
-			}else{
-				audioFile.pause()
-				event.target.id="paused"
-			}
-		}
-		else{
-			audioPlayer.src=songName;
-			audioFile.play()
-			if (document.querySelector('#playing')) {
-                document.querySelector('#playing').id = '';
-              }
-            else {
-                document.querySelector('#paused').id = '';
-                
-            }
-            event.target.id = 'playing';
 
+		var context = new AudioContext(); // Create and Initialize the Audio Context
+		var electro; // Create the Sound 
+		var getSound = new XMLHttpRequest(); // Load the Sound with XMLHttpRequest
+		getSound.open("GET", "./"+songName, true); // Path to Audio File
+		getSound.responseType = "arraybuffer"; // Read as Binary Data
+		getSound.onload = function () {
+			context.decodeAudioData(getSound.response, function (buffer) {
+				electro = buffer; // Decode the Audio Data and Store it in a Variable
+			});
 		}
+		getSound.send();
+
+		var playSound = context.createBufferSource(); // Declare a New Sound
+		playSound.buffer = electro; // Attatch our Audio Data as it's Buffer
+		playSound.connect(context.destination);  // Link the Sound to the Output
+		playSound.start(0); // Play the Sound Immediately
+
+		// if (songName === audioPlayer.getAttribute("src")) {
+		// 	if (audioPlayer.paused) {
+		// 		audioFile.play();
+		// 		event.target.id = "playing"
+		// 	} else {
+		// 		audioFile.pause()
+		// 		event.target.id = "paused"
+		// 	}
+		// }
+		// else {
+		// 	audioPlayer.src = songName;
+		// 	audioFile.play()
+		// 	if (document.querySelector('#playing')) {
+		// 		document.querySelector('#playing').id = '';
+		// 	}
+		// 	else {
+		// 		document.querySelector('#paused').id = '';
+
+		// 	}
+		// 	event.target.id = 'playing';
+
+		// }
 	}
 	else{
 		var audioPlayer=document.createElement("audio");
