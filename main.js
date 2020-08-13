@@ -14,14 +14,15 @@ jukeBox.addEventListener("click",function (event){
 		getSound.onload = function () {
 			context.decodeAudioData(getSound.response, function (buffer) {
 				electro = buffer; // Decode the Audio Data and Store it in a Variable
+				var playSound = context.createBufferSource(); // Declare a New Sound
+				playSound.buffer = electro; // Attatch our Audio Data as it's Buffer
+				playSound.connect(context.destination);  // Link the Sound to the Output
+				playSound.start(0); // Play the Sound Immediately
 			});
 		}
 		getSound.send();
 
-		var playSound = context.createBufferSource(); // Declare a New Sound
-		playSound.buffer = electro; // Attatch our Audio Data as it's Buffer
-		playSound.connect(context.destination);  // Link the Sound to the Output
-		playSound.start(0); // Play the Sound Immediately
+
 
 		// if (songName === audioPlayer.getAttribute("src")) {
 		// 	if (audioPlayer.paused) {
