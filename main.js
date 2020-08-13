@@ -3,6 +3,7 @@ jukeBox.addEventListener("click",function (event){
 	var songName=event.target.getAttribute("data-src")
 	var audioPlayer=document.querySelector("#player");
 	var audioFile = new Audio(songName);
+	audioFile.preload();
 	if(audioPlayer){
 		if(songName === audioPlayer.getAttribute("src")){
 			if(audioPlayer.paused){
