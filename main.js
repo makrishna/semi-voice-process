@@ -6,16 +6,16 @@ jukeBox.addEventListener("click",function (event){
 	if(audioPlayer){
 		if(songName === audioPlayer.getAttribute("src")){
 			if(audioPlayer.paused){
-				audioPlayer.play();
+				audioFile.play();
 				event.target.id="playing"
 			}else{
-				audioPlayer.pause()
+				audioFile.pause()
 				event.target.id="paused"
 			}
 		}
 		else{
 			audioPlayer.src=songName;
-			audioPlayer.play()
+			audioFile.play()
 			if (document.querySelector('#playing')) {
                 document.querySelector('#playing').id = '';
               }
@@ -32,7 +32,7 @@ jukeBox.addEventListener("click",function (event){
 		audioPlayer.id="player";
 		document.body.appendChild(audioPlayer);
 		audioPlayer.src=songName;
-		audioPlayer.play()
+		audioFile.play()
 		event.target.id = 'playing';
 	}
 })
