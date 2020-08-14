@@ -83,6 +83,7 @@ function playNewSong(songName, electro) {
 	if (context.state === 'running' || context.state === 'suspended') {
 		context.close();
 	}
+	isFinished = false;
 	context = new AudioContext();
 	let playSound = context.createBufferSource();
 	playSound.buffer = electro; 
