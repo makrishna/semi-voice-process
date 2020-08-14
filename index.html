@@ -35,7 +35,7 @@ button.selected{
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
        
 <div class="col-sm-12"> 
-    <div id="myProgress">
+    <div id="myProgress" hidden>
         <div id="myBar"></div>
       </div>
 <div style="float: left;" class="col-sm-6">
@@ -117,7 +117,7 @@ button.selected{
                         <button class="btn btn-danger btn-sm" title="stop" onclick="stopAll()" style="display: flex;justify-content: right;align-items: center;"><span class="material-icons">stop</span><span></span></button>	
                         <button class="btn btn-primary btn-sm" title="reset" onclick="stopAll()" style="display: flex;justify-content: right;align-items: center;margin-left: 16px;"><span class="material-icons">replay</span><span></span></button>	
                     </div>
-                    <ul class="vertical-nav-menu" style="display: flex;align-items: center; margin: 0 16px;">
+                    <ul class="vertical-nav-menu" style="display: flex;align-items: center;margin: 0 15px;background-color: #fff;padding: 8px 10px;margin-bottom: -4px;z-index: 2;">
                         <li class="mm-active" style="cursor: pointer;">
                             <a class="showSingle" target="1">
                                 Intro
@@ -141,8 +141,7 @@ button.selected{
                                 <div class="page-title-heading">
                                     
                                            <div class="row">
-                            <div class="">
-                                <div class="main-card mb-3 card targetDiv" id="div1" >
+                                <div class="main-card mb-3 card targetDiv" id="div1" style="margin-bottom: 8px!important;" >
                                     <div class="card-body">
                                         <h5 class="card-title">Intro
                                         </h5>
@@ -163,7 +162,7 @@ button.selected{
                                         
                                     </div>
                                 </div>
-								<div class="main-card mb-3 card targetDiv" id="div2" style="display:none">
+								<div class="main-card mb-3 card targetDiv" id="div2" style="display:none;margin-bottom: 8px!important;">
                                     <div class="card-body">
                                         <h5 class="card-title">Qualifying Questions
                                         </h5>
@@ -201,7 +200,7 @@ button.selected{
                                     </div>
                                         
                                     </div>
-									<div class="main-card mb-3 card targetDiv" id="div3" style="display:none">
+									<div class="main-card mb-3 card targetDiv" id="div3" style="display:none;margin-bottom: 8px!important;">
                                    <div class="card-body">
                                         <h5 class="card-title">Closing
                                         </h5>
@@ -221,7 +220,7 @@ button.selected{
                                     </div>
                                     </div>
                                 
-								 <div class="main-card mb-3 card" id="div4" >
+								 <div class="main-card mb-3 card" id="div4" style="margin-bottom: 8px!important;" >
                                     <div class="card-body">
                                         <h5 class="card-title">Rebuttels
                                         </h5>
@@ -276,7 +275,7 @@ button.selected{
 
                                     </div>
                                 </div>
-								<div class="main-card mb-3 card" id="div5">
+								<div class="main-card mb-3 card" id="div5" style="margin-bottom: 8px!important;">
                                     <div class="card-body">
                                         <h5 class="card-title">Banters
                                         </h5>
@@ -344,10 +343,7 @@ button.selected{
                                         </button>
 
                                     </div>
-                                </div>
-                            </div>
-                           
-                              
+                                </div>                           
                             </div>
                            
         </div>
