@@ -10870,8 +10870,6 @@ padding-bottom:60px
 }
 
 .app-page-title {
-padding:30px;
-margin:-30px -30px 30px;
 position:relative
 }
 
@@ -24296,4 +24294,14 @@ margin-bottom:2px!important
 height:350px;
 margin-bottom:30px;
 background-size:100%
+}
+#myProgress {
+  width: 100%;
+  background-color: #ddd;
+}
+
+#myBar {
+  width: 1%;
+  height: 5px;
+  background-color: #4CAF50;
 }
