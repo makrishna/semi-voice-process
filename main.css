@@ -24297,7 +24297,8 @@ background-size:100%
 }
 #myProgress {
   width: 100%;
-  background-color: #ddd;
+  padding: 0 16px;
+  background-color: #eef2f6;
 }
 
 #myBar {
