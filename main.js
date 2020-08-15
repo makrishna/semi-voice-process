@@ -14,6 +14,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 function loadSounds(id) {
+	width = 0;
+	elem.style.width = width + '%';
 	let btnElement = document.getElementById(id);
 	let buttons = btnElement.getElementsByTagName("button");
 	if (buttons.length) {
