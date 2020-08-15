@@ -10368,6 +10368,7 @@ opacity:1
 .vertical-nav-menu li.mm-active>a {
 font-weight:700;
 background-color:#8fc3e4;
+border-bottom: 4px solid;
 }
 
 .vertical-nav-menu li.mm-active>a i.metismenu-state-icon {

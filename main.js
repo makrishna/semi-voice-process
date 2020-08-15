@@ -7,6 +7,8 @@ let isFinished = false;
 let elem = document.getElementById("myBar");
 let width = 0;
 
+let loadMessage = document.getElementById("loadMessage");
+
 window.addEventListener('DOMContentLoaded', (event) => {
 	let keys = divs.keys();
 	loadSounds(keys.next().value);
@@ -28,6 +30,8 @@ function keyDown(event){
 function loadSounds(id) {
 	width = 0;
 	elem.style.width = width + '%';
+	let loadMessageMap = new Map().set('div1','loading INTROS...').set('div4','loading REBUTTELS...').set('div5','loading BANTERS...').set('div2','loading QUALIFYING QUESTIONS...').set('div3','loading CLOSINGS...');
+	loadMessage.innerHTML = loadMessageMap.get(id);
 	let btnElement = document.getElementById(id);
 	let buttons = btnElement.getElementsByTagName("button");
 	if (buttons.length) {
@@ -50,6 +54,7 @@ function setAudioToButton(element, length, id) {
 			elem.style.width = (100 / length) * width + '%';
 			if (length === width) {
 				doRecursion(id);
+				loadMessage.innerHTML = '';
 			}
 		});
 	}
