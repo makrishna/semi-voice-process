@@ -107,8 +107,11 @@ function onEnded() {
 	console.log('playback finished');
 }
 
-$('button').on('click', function () {
+function reset(){
 	$('button').removeClass('selected');
+}
+
+$('button').on('click', function () {
 	$(this).addClass('selected');
 });
 jQuery(function () {
