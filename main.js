@@ -13,6 +13,18 @@ window.addEventListener('DOMContentLoaded', (event) => {
 	localStorage.clear();
 });
 
+window.addEventListener('keydown',keyDown);
+
+function keyDown(event){
+	let keys = Array.from(namesAndSounds.keys());
+	for(let i=0;i < keys.length;i++){
+		let j = keys[i].lastIndexOf('\\')+1;
+		if(keys[i][j] === event.key){
+			return playNewSong(keys[i],namesAndSounds.get(keys[i]));
+		}
+	}
+}
+
 function loadSounds(id) {
 	width = 0;
 	elem.style.width = width + '%';
@@ -109,6 +121,7 @@ function onEnded() {
 
 function reset(){
 	$('button').removeClass('selected');
+	stopAll();
 }
 
 $('button').on('click', function () {
