@@ -24298,7 +24298,6 @@ background-size:100%
 }
 #myProgress {
   width: 100%;
-  padding: 0 16px;
   background-color: #eef2f6;
 }
 
@@ -24306,4 +24305,14 @@ background-size:100%
   width: 1%;
   height: 5px;
   background-color: #4CAF50;
+}
+#rebuttelsBar{
+  width: 1%;
+  height: 5px;
+  background-color: #4c7faf;
+}
+#bantersBar{
+  width: 1%;
+  height: 5px;
+  background-color: #1a6f79;
 }

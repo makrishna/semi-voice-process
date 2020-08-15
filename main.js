@@ -7,6 +7,10 @@ let isFinished = false;
 let elem = document.getElementById("myBar");
 let width = 0;
 
+let rebuttelsBar = document.getElementById("rebuttelsBar");
+
+let bantersBar = document.getElementById("bantersBar");
+
 let loadMessage = document.getElementById("loadMessage");
 
 window.addEventListener('DOMContentLoaded', (event) => {
@@ -51,7 +55,22 @@ function setAudioToButton(element, length, id) {
 		context.decodeAudioData(getSound.response, function (buffer) {
 			width++;
 			namesAndSounds.set(element.dataset.src, buffer);
-			elem.style.width = (100 / length) * width + '%';
+			switch(id){
+				case 'div4':
+					rebuttelsBar.style.width = (100 / length) * width + '%';
+					break;
+				case 'div5':
+					bantersBar.style.width = (100 / length) * width + '%';
+					break;
+				default:
+					elem.style.width = (100 / length) * width + '%';
+					break;
+			}
+
+			if(id == 'div4'){
+				
+			}
+
 			if (length === width) {
 				doRecursion(id);
 				loadMessage.innerHTML = '';
@@ -67,8 +86,6 @@ function doRecursion(id) {
 		let keys = Array.from(divs.keys());
 		for (let key of keys) {
 			if (!divs.get(key)) {
-				width = 0;
-				elem.style.width = width + '%';
 				return loadSounds(key);
 			}
 		}
