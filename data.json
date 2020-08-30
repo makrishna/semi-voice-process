@@ -1,0 +1,541 @@
+    {
+        "Intros": {
+            "data": [
+                {
+                    "name": "Intro",
+                    "src": "1.Main\\intro.wav",
+                    "key": "I",
+                    "class": "button"
+                  },
+                  {
+                    "name": "Purpose",
+                    "src": "1.Main\\purpose.wav",
+                    "key": "P",
+                    "class": "button"
+                  },
+                  {
+                    "name": "Offer",
+                    "src": "1.Main\\offer.wav",
+                    "key": "O",
+                    "class": "button"
+                  },
+                  {
+                    "name": "Reconfirm",
+                    "src": "1.Main\\reconfirm.wav",
+                    "key": "R",
+                    "class": "button"
+                  },
+                  {
+                    "name": "Shipping",
+                    "src": "1.Main\\shipping.wav",
+                    "key": "S",
+                    "class": "button"
+                  },
+                  {
+                    "name": "Info Gathering",
+                    "src": "1.Main\\info gathering.wav",
+                    "key": "I",
+                    "class": "button"
+                  },
+                  {
+                    "name": "Recording",
+                    "src": "1.Main\\Record.wav",
+                    "key": "R",
+                    "class": "button"
+                  }
+            ],
+            "hidden":false,
+            "id":"div1",
+            "is-target-div":true
+        },
+        "qualifying-questions": {
+            "data": [
+                {
+                    "name": "Best Phone Number",
+                    "src": "2.Qualifying Questions/Phone Number.wav",
+                    "key": "B",
+                    "class": "button"
+                  },
+                  {
+                    "name": "First Name Spelling",
+                    "src": "2.Qualifying Questions/First Name Spelling.wav",
+                    "key": "F",
+                    "class": "button"
+                  },
+                  {
+                    "name": "Last Name Spelling",
+                    "src": "2.Qualifying Questions/Last Name Spell.wav",
+                    "key": "L",
+                    "class": "button"
+                  },
+                  {
+                    "name": "Street address",
+                    "src": "2.Qualifying Questions/Street.wav",
+                    "key": "S",
+                    "class": "button"
+                  },
+                  {
+                    "name": "Shipping billing same",
+                    "src": "2.Qualifying Questions/Shipping billing same.wav",
+                    "key": "S",
+                    "class": "button"
+                  },
+                  {
+                    "name": "Billing street spell",
+                    "src": "2.Qualifying Questions/state.wav",
+                    "key": "B",
+                    "class": "button"
+                  },
+                  {
+                    "name": "city",
+                    "src": "2.Qualifying Questions/city.wav",
+                    "key": "c",
+                    "class": "button"
+                  },
+                  {
+                    "name": "country",
+                    "src": "2.Qualifying Questions/country.wav",
+                    "key": "c",
+                    "class": "button"
+                  },
+                  {
+                    "name": "State",
+                    "src": "2.Qualifying Questions/state.wav",
+                    "key": "S",
+                    "class": "button"
+                  },
+                  {
+                    "name": "Zip Code",
+                    "src": "2.Qualifying Questions/Zipcode.wav",
+                    "key": "Z",
+                    "class": "button"
+                  },
+                  {
+                    "name": "Credit or debit",
+                    "src": "2.Qualifying Questions/Card Type.wav",
+                    "key": "C",
+                    "class": "button"
+                  },
+                  {
+                    "name": "Name on card",
+                    "src": "2.Qualifying Questions/Name on the Card.wav",
+                    "key": "N",
+                    "class": "button"
+                  },
+                  {
+                    "name": "16 digit number",
+                    "src": "2.Qualifying Questions/Card Number.wav",
+                    "key": "1",
+                    "class": "button"
+                  },
+                  {
+                    "name": "Expire date",
+                    "src": "2.Qualifying Questions/Card Expiry.wav",
+                    "key": "E",
+                    "class": "button"
+                  },
+                  {
+                    "name": "CVV",
+                    "src": "2.Qualifying Questions/CVV.wav",
+                    "key": "C",
+                    "class": "button"
+                  },
+                  {
+                    "name": "Email",
+                    "src": "2.Qualifying Questions/Email Address.wav",
+                    "key": "E",
+                    "class": "button"
+                  }
+            ],
+            "hidden":true,
+            "id":"div2",
+            "is-target-div":true
+        },
+        "closing": {
+            "data": [
+                {
+                    "name": "Closer",
+                    "src": "5.closing/Closer.wav",
+                    "key": "C",
+                    "class": "button"
+                  },
+                  {
+                    "name": "Viagra",
+                    "src": "5.closing/VIAGRA.wav",
+                    "key": "V",
+                    "class": "button"
+                  },
+                  {
+                    "name": "Cialis",
+                    "src": "5.closing/CIALIS.wav",
+                    "key": "C",
+                    "class": "button"
+                  },
+                  {
+                    "name": "Schedule",
+                    "src": "5.closing/Schedule.wav",
+                    "key": "S",
+                    "class": "button"
+                  },
+                  {
+                    "name": "Call Back",
+                    "src": "5.closing/Callback.wav",
+                    "key": "C",
+                    "class": "button"
+                  },
+                  {
+                    "name": "End",
+                    "src": "5.closing/End.wav",
+                    "key": "E",
+                    "class": "button"
+                  }
+            ],
+            "hidden":true,
+            "id":"div3",
+            "is-target-div":true
+        },
+        "Rebuttals": {
+            "data": [
+                {
+                    "name": "Alternate No",
+                    "src": "3.Rebuttals\\Alternate No.wav",
+                    "key": "A",
+                    "class": "buttonrebtl"
+                  },
+                  {
+                    "name": "Busy",
+                    "src": "3.Rebuttals\\Busy.wav",
+                    "key": "B",
+                    "class": "buttonrebtl"
+                  },
+                  {
+                    "name": "COD",
+                    "src": "3.Rebuttals\\COD.wav",
+                    "key": "C",
+                    "class": "buttonrebtl"
+                  },
+                  {
+                    "name": "Spell",
+                    "src": "3.Rebuttals\\Spell.wav",
+                    "key": "S",
+                    "class": "buttonrebtl"
+                  },
+                  {
+                    "name": "Confirm",
+                    "src": "3.Rebuttals\\Confirm.wav",
+                    "key": "C",
+                    "class": "buttonrebtl"
+                  },
+                  {
+                    "name": "Hold on",
+                    "src": "3.Rebuttals\\Hold on.wav",
+                    "key": "H",
+                    "class": "buttonrebtl"
+                  },
+                  {
+                    "name": "Name 2",
+                    "src": "3.Rebuttals\\Name 2.wav",
+                    "key": "N",
+                    "class": "buttonrebtl"
+                  },
+                  {
+                    "name": "Name",
+                    "src": "3.Rebuttals\\Name.wav",
+                    "key": "N",
+                    "class": "buttonrebtl"
+                  },
+                  {
+                    "name": "Not interested",
+                    "src": "3.Rebuttals\\Not interested.wav",
+                    "key": "N",
+                    "class": "buttonrebtl"
+                  },
+                  {
+                    "name": "Time Duration",
+                    "src": "3.Rebuttals\\Time Duration.wav",
+                    "key": "T",
+                    "class": "buttonrebtl"
+                  },
+                  {
+                    "name": "Time Rebuttal",
+                    "src": "3.Rebuttals\\Time Rebuttal.wav",
+                    "key": "T",
+                    "class": "buttonrebtl"
+                  },
+                  {
+                    "name": "Number Rep",
+                    "src": "3.Rebuttals\\Number Rep.wav",
+                    "key": "N",
+                    "class": "buttonrebtl"
+                  },
+                  {
+                    "name": "Offer",
+                    "src": "3.Rebuttals\\Offer.wav",
+                    "key": "O",
+                    "class": "buttonrebtl"
+                  },
+                  {
+                    "name": "Other Med",
+                    "src": "3.Rebuttals\\Other Med.wav",
+                    "key": "O",
+                    "class": "buttonrebtl"
+                  },
+                  {
+                    "name": "Office Num",
+                    "src": "3.Rebuttals\\Phone No.wav",
+                    "key": "O",
+                    "class": "buttonrebtl"
+                  },
+                  {
+                    "name": "Price",
+                    "src": "3.Rebuttals\\Price.wav",
+                    "key": "P",
+                    "class": "buttonrebtl"
+                  },
+                  {
+                    "name": "Purpose Rep",
+                    "src": "3.Rebuttals\\Purpose Rep.wav",
+                    "key": "P",
+                    "class": "buttonrebtl"
+                  },
+                  {
+                    "name": "Robot",
+                    "src": "3.Rebuttals\\Robot.wav",
+                    "key": "R",
+                    "class": "buttonrebtl"
+                  },
+                  {
+                    "name": "Script Follow",
+                    "src": "3.Rebuttals\\Script Follow.wav",
+                    "key": "S",
+                    "class": "buttonrebtl"
+                  },
+                  {
+                    "name": "Shipping Time",
+                    "src": "3.Rebuttals\\Shipping Time.wav",
+                    "key": "S",
+                    "class": "buttonrebtl"
+                  },
+                  {
+                    "name": "Company Name",
+                    "src": "3.Rebuttals\\Company Name.wav",
+                    "key": "C",
+                    "class": "buttonrebtl"
+                  },
+                  {
+                    "name": "Not interested 2",
+                    "src": "3.Rebuttals\\Not interested 2.wav",
+                    "key": "N",
+                    "class": "buttonrebtl"
+                  },
+                  {
+                    "name": "whom you want to talk",
+                    "src": "3.Rebuttals\\whom you want to talk.wav",
+                    "key": "w",
+                    "class": "buttonrebtl"
+                  },
+                  {
+                    "name": "Where did you get my info",
+                    "src": "3.Rebuttals\\Where did you get my info.wav",
+                    "key": "W",
+                    "class": "buttonrebtl"
+                  }
+            ],
+            "hidden":false,
+            "id":"div4",
+            "is-target-div":false
+        },
+        "banters": {
+            "data": [
+                {
+                    "name": "A couple of mins",
+                    "src": "4.banters\\A couple of mins.wav",
+                    "key": "A",
+                    "class": "buttonbntr"
+                  },
+                  {
+                    "name": "are you Still There",
+                    "src": "4.banters\\are you Still There.wav",
+                    "key": "a",
+                    "class": "buttonbntr"
+                  },
+                  {
+                    "name": "Can you Hear me",
+                    "src": "4.banters\\Can you Hear me.wav",
+                    "key": "C",
+                    "class": "buttonbntr"
+                  },
+                  {
+                    "name": "Glad to Hear that",
+                    "src": "4.banters\\Glad to Hear that.wav",
+                    "key": "G",
+                    "class": "buttonbntr"
+                  },
+                  {
+                    "name": "One moment please",
+                    "src": "4.banters\\One moment please.wav",
+                    "key": "O",
+                    "class": "buttonbntr"
+                  },
+                  {
+                    "name": "Sorry to hear that",
+                    "src": "4.banters\\Sorry to hear that.wav",
+                    "key": "S",
+                    "class": "buttonbntr"
+                  },
+                  {
+                    "name": "Thank you so Much",
+                    "src": "4.banters\\Thank you so Much.wav",
+                    "key": "T",
+                    "class": "buttonbntr"
+                  },
+                  {
+                    "name": "Sure no Problem",
+                    "src": "4.banters\\Sure no Problem.wav",
+                    "key": "S",
+                    "class": "buttonbntr"
+                  },
+                  {
+                    "name": "Absolutely",
+                    "src": "4.banters\\Absolutely.wav",
+                    "key": "A",
+                    "class": "buttonbntr"
+                  },
+                  {
+                    "name": "ahaa",
+                    "src": "4.banters\\ahaa.wav",
+                    "key": "a",
+                    "class": "buttonbntr"
+                  },
+                  {
+                    "name": "all right",
+                    "src": "4.banters\\all right.wav",
+                    "key": "a",
+                    "class": "buttonbntr"
+                  },
+                  {
+                    "name": "Awesome",
+                    "src": "4.banters\\Awesome.wav",
+                    "key": "A",
+                    "class": "buttonbntr"
+                  },
+                  {
+                    "name": "Cut out",
+                    "src": "4.banters\\Cut out.wav",
+                    "key": "C",
+                    "class": "buttonbntr"
+                  },
+                  {
+                    "name": "Great",
+                    "src": "4.banters\\Great.wav",
+                    "key": "G",
+                    "class": "buttonbntr"
+                  },
+                  {
+                    "name": "hahaha",
+                    "src": "4.banters\\hahaha.wav",
+                    "key": "h",
+                    "class": "buttonbntr"
+                  },
+                  {
+                    "name": "huuum",
+                    "src": "4.banters\\huuum.wav",
+                    "key": "h",
+                    "class": "buttonbntr"
+                  },
+                  {
+                    "name": "Iam sorry no",
+                    "src": "4.banters\\Iam sorry no.wav",
+                    "key": "I",
+                    "class": "buttonbntr"
+                  },
+                  {
+                    "name": "No",
+                    "src": "4.banters\\No.wav",
+                    "key": "N",
+                    "class": "buttonbntr"
+                  },
+                  {
+                    "name": "Okay Got it",
+                    "src": "4.banters\\Okay Got it.wav",
+                    "key": "O",
+                    "class": "buttonbntr"
+                  },
+                  {
+                    "name": "okay",
+                    "src": "4.banters\\okay.wav",
+                    "key": "o",
+                    "class": "buttonbntr"
+                  },
+                  {
+                    "name": "Perfect",
+                    "src": "4.banters\\Perfect.wav",
+                    "key": "P",
+                    "class": "buttonbntr"
+                  },
+                  {
+                    "name": "Sorry Repeat",
+                    "src": "4.banters\\Sorry Repeat.wav",
+                    "key": "S",
+                    "class": "buttonbntr"
+                  },
+                  {
+                    "name": "Sorry",
+                    "src": "4.banters\\Sorry.wav",
+                    "key": "S",
+                    "class": "buttonbntr"
+                  },
+                  {
+                    "name": "Sounds Great",
+                    "src": "4.banters\\Sounds Great.wav",
+                    "key": "S",
+                    "class": "buttonbntr"
+                  },
+                  {
+                    "name": "Take Your time",
+                    "src": "4.banters\\Take Your time.wav",
+                    "key": "T",
+                    "class": "buttonbntr"
+                  },
+                  {
+                    "name": "Thank You",
+                    "src": "4.banters\\Thank You.wav",
+                    "key": "T",
+                    "class": "buttonbntr"
+                  },
+                  {
+                    "name": "Thanks",
+                    "src": "4.banters\\Thanks.wav",
+                    "key": "T",
+                    "class": "buttonbntr"
+                  },
+                  {
+                    "name": "wonderful",
+                    "src": "4.banters\\wonderful.wav",
+                    "key": "w",
+                    "class": "buttonbntr"
+                  },
+                  {
+                    "name": "Understand",
+                    "src": "4.banters\\Yeah Understand.wav",
+                    "key": "U",
+                    "class": "buttonbntr"
+                  },
+                  {
+                    "name": "Yeah",
+                    "src": "4.banters\\Yeah.wav",
+                    "key": "Y",
+                    "class": "buttonbntr"
+                  },
+                  {
+                    "name": "Yes",
+                    "src": "4.banters\\Yes.wav",
+                    "key": "Y",
+                    "class": "buttonbntr"
+                  }
+            ],
+            "hidden":false,
+            "id":"div5",
+            "is-target-div":false
+        }
+    }

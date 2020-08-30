@@ -7,34 +7,89 @@ let isFinished = false;
 let elem = document.getElementById("myBar");
 let width = 0;
 
-let rebuttelsBar = document.getElementById("rebuttelsBar");
+let rebuttelsBar;
 
-let bantersBar = document.getElementById("bantersBar");
+let bantersBar;
 
 let loadMessage = document.getElementById("loadMessage");
 
+let dataResponse;
+
+let dataCall = new XMLHttpRequest();
+
 window.addEventListener('DOMContentLoaded', (event) => {
-	let keys = divs.keys();
-	loadSounds(keys.next().value);
 	localStorage.clear();
+	dataCall.open("GET", "./data.json", true);
+	dataCall.send();
 });
 
-window.addEventListener('keydown',keyDown);
+dataCall.onload = function () {
+	dataResponse = JSON.parse(dataCall.response);
+	setTemplate();
+}
 
-function keyDown(event){
+function setTemplate() {
+	let buttonsHtml = "";
+	$('#player')[0].innerHTML = "";
+	for (key in dataResponse) {
+		buttonsHtml = "";
+		dataResponse[key].data.forEach(ele => {
+			buttonsHtml += `<button class="${ele.class}" data-src="${ele.src}"><span class='key-icon'>${ele.key}</span>${ele.name}</button>`;
+		})
+		$('#player').append(`
+		<div id="myProgress">
+        <div id="${dataResponse[key].id}bar"></div>
+    	</div>	
+		<div class="main-card mb-3 card ${dataResponse[key]['is-target-div'] ? 'targetDiv' : ''} col-12" id="${dataResponse[key].id}"style="margin-bottom: 8px!important;width: 100%;display:${dataResponse[key].hidden ? 'none' : 'block'}">
+		<div class="card-body">
+		<h5 class="card-title">${key}</h5>
+		<div style="display:flex;flex-wrap:wrap">
+		${buttonsHtml}
+		</div>
+		</div>
+		</div>`);
+		let keys = divs.keys();
+		loadSounds(keys.next().value);
+		rebuttelsBar = document.getElementById("div4");
+		bantersBar = document.getElementById("div5");
+	}
+}
+
+function loadComponents() {
+	for (key in dataResponse) {
+		if (key == "qualifying-questions") {
+			dataResponse[key].hidden = false;
+			dataResponse["Intros"].hidden = true;
+			dataResponse["closing"].hidden = true;
+			break;
+		}
+		setTemplate();
+	}
+}
+
+window.addEventListener('keydown', keyDown);
+
+function keyDown(event) {
 	let keys = Array.from(namesAndSounds.keys());
-	for(let i=0;i < keys.length;i++){
-		let j = keys[i].lastIndexOf('\\')+1;
-		if(keys[i][j] === event.key){
-			return playNewSong(keys[i],namesAndSounds.get(keys[i]));
+	let buttons = document.getElementsByTagName("button");
+	for (let i = 0; i < keys.length; i++) {
+		let j = keys[i].lastIndexOf('\\') + 1;
+		if (keys[i][j] === event.key) {
+			for(let k = 0;k<buttons.length;k++){
+				if(keys[i] == buttons[k].getAttribute('data-src')){
+					buttons[k].id = 'playing';
+				}
+			}
+			return playNewSong(keys[i], namesAndSounds.get(keys[i]));
 		}
 	}
+
 }
 
 function loadSounds(id) {
 	width = 0;
 	elem.style.width = width + '%';
-	let loadMessageMap = new Map().set('div1','loading INTROS...').set('div4','loading REBUTTELS...').set('div5','loading BANTERS...').set('div2','loading QUALIFYING QUESTIONS...').set('div3','loading CLOSINGS...');
+	let loadMessageMap = new Map().set('div1', 'loading INTROS...').set('div4', 'loading REBUTTELS...').set('div5', 'loading BANTERS...').set('div2', 'loading QUALIFYING QUESTIONS...').set('div3', 'loading CLOSINGS...');
 	loadMessage.innerHTML = loadMessageMap.get(id);
 	let btnElement = document.getElementById(id);
 	let buttons = btnElement.getElementsByTagName("button");
@@ -55,21 +110,18 @@ function setAudioToButton(element, length, id) {
 		context.decodeAudioData(getSound.response, function (buffer) {
 			width++;
 			namesAndSounds.set(element.dataset.src, buffer);
-			switch(id){
+			switch (id) {
 				case 'div4':
-					rebuttelsBar.style.width = (100 / length) * width + '%';
+					div4bar.style.width = (100 / length) * width + '%';
 					break;
 				case 'div5':
-					bantersBar.style.width = (100 / length) * width + '%';
+					div5bar.style.width = (100 / length) * width + '%';
 					break;
 				default:
 					elem.style.width = (100 / length) * width + '%';
 					break;
 			}
 
-			if(id == 'div4'){
-				
-			}
 
 			if (length === width) {
 				doRecursion(id);
@@ -94,28 +146,33 @@ function doRecursion(id) {
 
 jukeBox.addEventListener("click", function (event) {
 	let songName = event.target.getAttribute("data-src");
-	let electro = namesAndSounds.get(songName);
-	if (localStorage.getItem('songName')) {
-		let oldSongName = localStorage.getItem('songName');
-		if (songName === oldSongName) {
-			if (context.state === 'running') {
-				context.suspend()
-			} else if (context.state === 'suspended') {
-				context.resume()
+	if (songName != undefined) {
+		let electro = namesAndSounds.get(songName);
+		if (localStorage.getItem('songName')) {
+			let oldSongName = localStorage.getItem('songName');
+			if (songName === oldSongName) {
+				if (context.state === 'running') {
+					context.suspend()
+				} else if (context.state === 'suspended') {
+					context.resume()
+				}
+				if (context.state == "closed") {
+					playNewSong(songName, electro);
+				}
+				localStorage.setItem('songName', songName);
+				if (isFinished) {
+					playNewSong(songName, electro);
+				}
 			}
-			localStorage.setItem('songName', songName);
-			if (isFinished) {
-				playNewSong(songName, electro);
+			else {
+				playNewSong(songName, electro)
 			}
 		}
 		else {
-			playNewSong(songName, electro)
+			playNewSong(songName, electro);
 		}
 	}
-	else {
-		playNewSong(songName, electro);
-	}
-})
+});
 
 function playNewSong(songName, electro) {
 	if (context.state === 'running' || context.state === 'suspended') {
@@ -141,7 +198,8 @@ function onEnded() {
 	console.log('playback finished');
 }
 
-function reset(){
+function reset() {
+	$('button').removeAttr('id');
 	$('button').removeClass('selected');
 	stopAll();
 }

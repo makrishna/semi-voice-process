@@ -2533,59 +2533,68 @@ margin-bottom:0
 }
 
 .button {
-  background-color: #4CAF50; /* Green */
+  background-color: #4CAF50;
   border: none;
   color: white;
-  padding: 5px 2px;
-  overflow:hidden;
-  width:24%;
-  height:28px;
-  text-align: center;
+  padding: 3.5px 2px;
+  overflow: hidden;
+  width: 24.5%;
+  height: 28px;
+  text-align: inherit;
   text-decoration: none;
   display: inline-block;
   font-size: 14px;
-  margin: 1px 0px;
+  margin: 2px;
   cursor: pointer;
-  border-radius:0px;
+  border-radius: 4px;
+}
+.button .key-icon{
+  background-color: rgb(187, 138, 0);
 }
 .buttonbntr {
   background-color: #1a6f79; /* blue */
   border: none;
   color: white;
-  padding: 5px 2px;
-  width:24%;
+  padding: 3.5px 2px;
+  width:24.5%;
   height:28px;
-  text-align: center;
+  text-align: inherit;
   text-decoration: none;
   display: inline-block;
   font-size: 14px;
-  margin: 1px 0px;
+  margin: 2px;
   cursor: pointer;
-  border-radius:0px;
+  border-radius:4px;
+}
+.buttonbntr .key-icon{
+  background-color: rgb(35, 187, 136);
 }
 .buttonrebtl {
   background-color: #4c7faf; /* re */
   border: none;
   color: white;
-  padding: 5px 2px;
-  width:24%;
+  padding: 3.5px 2px;
+  width:24.5%;
   height:28px;
-  text-align: center;
+  text-align: inherit;
   text-decoration: none;
   display: inline-block;
   font-size: 14px;
-  margin: 1px 0px;
+  margin: 2px;
   cursor: pointer;
-  border-radius:0px;
+  border-radius:4px;
+}
+.buttonrebtl .key-icon{
+  background-color: rgb(69, 165, 255);
 }
 .buttonhg {
   background-color: #4CAF50; /* Green */
   border: none;
   color: white;
-  padding: 5px 2px;
+  padding: 4px 2px;
   width:24%;
   height:28px;
-  text-align: center;
+  text-align: inherit;
   text-decoration: none;
   display: inline-block;
   font-size: 14px;
@@ -24306,13 +24315,30 @@ background-size:100%
   height: 5px;
   background-color: #4CAF50;
 }
-#rebuttelsBar{
+#div4bar{
   width: 1%;
   height: 5px;
   background-color: #4c7faf;
 }
-#bantersBar{
+#div5bar{
   width: 1%;
   height: 5px;
   background-color: #1a6f79;
+}
+
+.key-icon{
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin: inherit;
+  font-weight: 900;
+}
+
+button.selected {
+  background-color: #f7b924;
+}
+
+#playing {
+  background-color: #f7b924;
+  border: 1px solid #ba8a25;
+  box-shadow: 1px 1px 5px -2px rgba(0,0,0,0.37);
 }
